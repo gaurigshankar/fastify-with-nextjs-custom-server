@@ -18,7 +18,7 @@ const createSeparateServer = (
     const requestUrl = url.parse(req.url ? req.url : "");
     if (requestUrl.path === path) {
       res.setHeader("Content-Type", "text/json");
-      res.end(JSON.stringify({ metrics: false }))
+      res.end(JSON.stringify({ metrics: true }))
     } else {
       res.statusCode = 404;
       res.end("Not found");

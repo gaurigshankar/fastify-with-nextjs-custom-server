@@ -30,11 +30,11 @@ const createNextServer = async () => {
         hostname,
         })
         .addHook("onRequest", (request, _reply, done) => {
-          console.log("New Request ....",request.url)
+          //console.log("New Request ....",request.url)
           done();
         })
         .addHook("onResponse", (request, reply, done) => {
-          console.log("New Response ....")
+          //console.log("New Response ....")
           done();
         });
     
