@@ -46,11 +46,20 @@ const createNextServer = async () => {
     server.get("/new", async (req :FastifyRequest , reply: FastifyReply) => {
       return {hello: "gauri Shankar"} 
     })
+
+    server.get("/3p/header", async (req :FastifyRequest , reply: FastifyReply) => {
+      const actualPage = "/header";
+      const html = await app.renderToHTML(req.raw, reply.raw, actualPage);
+      reply.send(`<iframe>${html}</iframe>`)
+      reply.sent = true;
+    })
     server.all("/*", {}, nextHandler);
 
     server.get("/", async (req :FastifyRequest , reply: FastifyReply) => {
       return {hello: "gauri"} 
     })
+
+    
 
     server.setErrorHandler(
         (error, request, reply) => {

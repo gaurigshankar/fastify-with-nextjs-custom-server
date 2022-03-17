@@ -47,7 +47,7 @@ const createOnServer = (server: FastifyInstance, path: string) => {
 
 const rawPrometheusPlugin: FastifyPluginCallback = (server, options, done) => {
   debugger;
-  const port = 7766;
+  const port = 7767;
   const path = "/metrics";
 
   //createOnServer(server, path);
